@@ -1,0 +1,85 @@
+[
+  {
+    "name": "Dennis Dipo",
+    "profile_pic": "users/dipo.png",
+    "short_bio": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
+    "long_bio": "Dolor est cupidatat dolor cupidatat cillum amet veniam eiusmod aliqua adipisicing aliquip proident adipisicing. Non nulla ex nisi magna ut cillum Lorem ad. Fugiat nulla laboris consequat excepteur ut est veniam voluptate ut officia anim reprehenderit proident sunt. Do proident laboris consequat laboris cillum minim reprehenderit velit.\r\n",
+    "advocate_years_exp": 2,
+    "company": {
+      "id": 1,
+      "name": "Agora",
+      "logo": "agora_logo.png",
+      "href": "/companies/6"
+    },
+    "links": {
+      "youtube": "youtube.com/username",
+      "twitter": "twitter.com/username",
+      "github": "github.com/username"
+    }
+
+  },
+
+  {
+    "name": "Kley Drey",
+    "profile_pic": "users/drey.png",
+    "short_bio": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
+    "long_bio": "Dolor est cupidatat dolor cupidatat cillum amet veniam eiusmod aliqua adipisicing aliquip proident adipisicing. Non nulla ex nisi magna ut cillum Lorem ad. Fugiat nulla laboris consequat excepteur ut est veniam voluptate ut officia anim reprehenderit proident sunt. Do proident laboris consequat laboris cillum minim reprehenderit velit.\r\n",
+    "advocate_years_exp": 1,
+    "company": {
+      "id": 2,
+      "name": "LearnFlo",
+      "logo": "agora_logo.png",
+      "href": "/companies/6"
+    },
+    "links": {
+      "youtube": "youtube.com/username",
+      "twitter": "twitter.com/username",
+      "github": "github.com/username"
+    }
+
+
+  },
+
+  {
+    "name": "Loveline Florence",
+    "profile_pic": "users/florence.png",
+    "short_bio": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
+    "long_bio": "Dolor est cupidatat dolor cupidatat cillum amet veniam eiusmod aliqua adipisicing aliquip proident adipisicing. Non nulla ex nisi magna ut cillum Lorem ad. Fugiat nulla laboris consequat excepteur ut est veniam voluptate ut officia anim reprehenderit proident sunt. Do proident laboris consequat laboris cillum minim reprehenderit velit.\r\n",
+    "advocate_years_exp": 1,
+    "company": {
+      "id": 3,
+      "name": "CareFor",
+      "logo": "agora_logo.png",
+      "href": "/companies/6"
+    },
+    "links": {
+      "youtube": "youtube.com/username",
+      "twitter": "twitter.com/username",
+      "github": "github.com/username"
+    }
+
+  },
+
+  {
+
+    "name": "Don Kennie",
+    "profile_pic": "users/kennie.png",
+    "short_bio": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
+    "long_bio": "Dolor est cupidatat dolor cupidatat cillum amet veniam eiusmod aliqua adipisicing aliquip proident adipisicing. Non nulla ex nisi magna ut cillum Lorem ad. Fugiat nulla laboris consequat excepteur ut est veniam voluptate ut officia anim reprehenderit proident sunt. Do proident laboris consequat laboris cillum minim reprehenderit velit.\r\n",
+    "advocate_years_exp": 3,
+    "company": {
+      "id": 1,
+      "name": "Agora",
+      "logo": "agora_logo.png",
+      "href": "/companies/6"
+    },
+    "links": {
+      "youtube": "youtube.com/username",
+      "twitter": "twitter.com/username",
+      "github": "github.com/username"
+    }
+
+
+  }
+
+]
