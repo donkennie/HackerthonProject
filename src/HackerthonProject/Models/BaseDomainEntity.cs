@@ -2,6 +2,6 @@
 {
     public abstract class BaseDomainEntity
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
     }
 }
