@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace HackerthonProject.Data
 {
-    public sealed class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContext) : base(dbContext)
@@ -17,10 +17,17 @@ namespace HackerthonProject.Data
 
         public DbSet<Advocate> Advocates { get; set; }
 
+        //public DbSet<Links> Links { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+           /* builder.Entity<Advocate>()
+                .HasOne(p => p.Company)
+                .WithMany(a => a.Advocates)
+                .HasForeignKey(a => a.CompanyId);*/
         }
     }
 }

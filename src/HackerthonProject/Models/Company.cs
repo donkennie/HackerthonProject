@@ -1,7 +1,12 @@
-﻿namespace HackerthonProject.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HackerthonProject.Models
 {
-    public class Company : BaseDomainEntity
+    public class Company 
     {
+        [Column("CompanyId")]
+        public int Id { get; set; }
+
         public string Name { get; set; }
 
         public string Logo { get; set; }

@@ -1,4 +1,8 @@
-﻿using System.Reflection;
+﻿using HackerthonProject.DTOs;
+using HackerthonProject.Models;
+
+using System.Reflection;
+using System.Text.Json;
 
 namespace HackerthonProject.Data
 {
@@ -9,18 +13,52 @@ namespace HackerthonProject.Data
         {
 			try
 			{
-				var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+				//var path = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+				if (!context.Companies.Any())
+				{
+                    using var transaction = context.Database.BeginTransaction();
+					var companyData = File.ReadAllText("./Data/SeedData/Company.json");
+                    //var company = JsonConvert.DeserializeObject<List<Company>>(companyData);
+                    var company = JsonSerializer.Deserialize<List<Company>>(companyData);
+
+                    foreach (var item in company)
+                    {
+                        context.Companies.Add(item);
+                    }
+
+                    await context.SaveChangesAsync();
+
+                    transaction.Commit();
+
+                }
+
 
 				if (!context.Advocates.Any())
 				{
-					using var transaction = context.Database.BeginTransaction();	
+					using var transaction = context.Database.BeginTransaction();
+
+                    var advocateData = File.ReadAllText("./Data/SeedData/Advocate.json");
+
+					var advocate = JsonSerializer.Deserialize<List<Advocate>>(advocateData);
+					
+					
+
+					foreach (var item in advocate)
+					{
+					  	context.Advocates.Add(item);
+					}
+
+					await context.SaveChangesAsync();
+
+					transaction.Commit();
+						
 				}
 
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-
-				throw;
+				var logger = loggerFactory.CreateLogger<Seed>();
+				logger.LogError(ex.Message);
 			}
         }
     }

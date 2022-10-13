@@ -1,6 +1,9 @@
-﻿namespace HackerthonProject.Features.Requests.Queries
+﻿using HackerthonProject.Core;
+using HackerthonProject.DTOs;
+using MediatR;
+
+namespace HackerthonProject.Features.Requests.Queries
 {
-    public class GetAllCompaniesRequest
-    {
-    }
+    public sealed record GetAllCompaniesRequest() : IRequest<ResultResponse<List<CompanyDTO>>>;
+
 }

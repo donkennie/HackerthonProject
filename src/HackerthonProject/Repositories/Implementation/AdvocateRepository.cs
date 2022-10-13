@@ -12,7 +12,8 @@ namespace HackerthonProject.Repositories.Implementation
         public AdvocateRepository(ApplicationDbContext applicationDbContext) => _applicationDbContext = applicationDbContext;
 
         public async Task<List<Advocate>> GetAllAdvocates() => await _applicationDbContext.Advocates
-            .Include(l => l.Links).ToListAsync();
+            .Include(l => l.Links)
+            .ToListAsync();
 
 
         public async Task<Advocate> GetAdvocateById(int id) => await _applicationDbContext.Advocates.FindAsync(id);

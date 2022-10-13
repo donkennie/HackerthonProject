@@ -2,8 +2,10 @@
 
 namespace HackerthonProject.Models
 {
-    public class Advocate : BaseDomainEntity
+    public class Advocate 
     {
+        [Column("AdvocateId")]
+        public int Id { get; set; }
 
         public string Name { get; set; }
 
@@ -20,8 +22,6 @@ namespace HackerthonProject.Models
 
         public Company Company { get; set; }
 
-        public ICollection<string> Links { get; set; }
-
-
+        public List<Links> Links { get; set; } = new List<Links>();
     }
 }

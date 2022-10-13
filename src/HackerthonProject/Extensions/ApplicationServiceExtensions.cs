@@ -1,7 +1,11 @@
-﻿using HackerthonProject.Data;
+﻿using HackerthonProject.Core;
+using HackerthonProject.Data;
+using HackerthonProject.Features.Handlers.Queries;
 using HackerthonProject.Repositories.Abstraction;
 using HackerthonProject.Repositories.Implementation;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace HackerthonProject.Extensions
 {
@@ -11,12 +15,14 @@ namespace HackerthonProject.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration _config)
         {
             services.AddScoped<IAdvocateRepository, AdvocateRepository>();
+            services.AddMvc(option => option.EnableEndpointRouting = false)
+       .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
             services.AddScoped<ICompanyRepository, CompanyRepository>();
-            services.AddDbContext<ApplicationDbContext>(x =>
-            {
-                x.UseSqlServer(_config.GetConnectionString("IdentityConnection"));
-            });
+            services.AddDbContext<ApplicationDbContext>(options =>
+                 options.UseSqlServer(
+                     _config.GetConnectionString("DatabaseConnection")));
 
             services.AddCors(opt =>
             {
@@ -25,6 +31,10 @@ namespace HackerthonProject.Extensions
                     policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://example.com");
                 });
             });
+
+            services.AddMediatR(typeof(GetAllCompaniesRequestHandler).Assembly);
+
+            services.AddAutoMapper(typeof(MappingProfiles).Assembly);
 
             return services;
         }
