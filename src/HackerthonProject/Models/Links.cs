@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HackerthonProject.Models
-{
+{   
     public class Links 
     {
         [Column("LinkId")]

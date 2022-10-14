@@ -1,21 +1,20 @@
 [
   {
-    "name": "Agora",
-    "logo": "agora_logo.png",
-    "summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum."
+    "Name": "Agora",
+    "Logo": "agora_logo.png",
+    "Summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
+    "Href":  "/Companies/1"
   },
-
   {
-    "name": "LearnFlo",
-    "logo": "agora_logo.png",
-    "summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum."
-
+    "Name": "LearnFlo",
+    "Logo": "agora_logo.png",
+    "Summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
+    "Href": "/Companies/2"
   },
-
   {
-    "name": "CareFor",
-    "logo": "agora_logo.png",
-    "summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum."
-
+    "Name": "CareFor",
+    "Logo": "agora_logo.png",
+    "Summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
+    "Href": "/Companies/3"
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "Youtube": "youtube.com/username",
+    "Twitter": "twitter.com/username",
+    "Github": "github.com/username",
+    "AdvocateId": 1
+  },
+  {
+    "Youtube": "youtube.com/username",
+    "Twitter": "twitter.com/username",
+    "Github": "github.com/username",
+    "AdvocateId": 2
+  },
+  {
+    "Youtube": "youtube.com/username",
+    "Twitter": "twitter.com/username",
+    "Github": "github.com/username",
+    "AdvocateId": 3
+  },
+  {
+    "Youtube": "youtube.com/username",
+    "Twitter": "twitter.com/username",
+    "Github": "github.com/username",
+    "AdvocateId": 4
+  }
+]

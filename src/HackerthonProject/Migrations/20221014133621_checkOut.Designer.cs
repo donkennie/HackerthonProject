@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HackerthonProject.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221013155912_initialCreateError")]
-    partial class initialCreateError
+    [Migration("20221014133621_checkOut")]
+    partial class checkOut
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -66,6 +66,9 @@ namespace HackerthonProject.Migrations
                         .HasColumnName("CompanyId");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Href")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Logo")
                         .HasColumnType("nvarchar(max)");

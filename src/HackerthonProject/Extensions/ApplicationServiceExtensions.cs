@@ -16,13 +16,13 @@ namespace HackerthonProject.Extensions
         {
             services.AddScoped<IAdvocateRepository, AdvocateRepository>();
             services.AddMvc(option => option.EnableEndpointRouting = false)
-       .AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
+             .AddNewtonsoftJson(options =>
+             options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
 
             services.AddScoped<ICompanyRepository, CompanyRepository>();
-            services.AddDbContext<ApplicationDbContext>(options =>
+          /*  services.AddDbContext<ApplicationDbContext>(options =>
                  options.UseSqlServer(
-                     _config.GetConnectionString("DatabaseConnection")));
+                     _config.GetConnectionString("DatabaseConnection")));*/
 
             services.AddCors(opt =>
             {

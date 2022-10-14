@@ -17,7 +17,7 @@ namespace HackerthonProject.Data
 
         public DbSet<Advocate> Advocates { get; set; }
 
-        //public DbSet<Links> Links { get; set; }
+        public DbSet<Links> Links { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

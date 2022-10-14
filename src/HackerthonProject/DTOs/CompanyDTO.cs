@@ -2,6 +2,6 @@
 
 namespace HackerthonProject.DTOs
 {
-    public record CompanyDTO(string Name, string Logo, string Summary, ICollection<Advocate> Advocates);
+    public record CompanyDTO(string Name, string Logo, string Summary, string Href, ICollection<Advocate> Advocates);
 
 }

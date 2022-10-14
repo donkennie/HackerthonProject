@@ -15,12 +15,14 @@ namespace HackerthonProject.Repositories.Implementation
 
         public async Task<List<Company>> GetAllCompanies() => 
                   await _applicationDbContext.Companies
-                 // .Include(p => p.Advocates)
+                   .Include(p => p.Advocates)
                    .ToListAsync();
 
 
-        public async Task<Company> GetCompanyById(int id) => 
-            await _applicationDbContext.Companies.FindAsync(id);
+        public async Task<Company> GetCompanyById(int id) =>
+            await _applicationDbContext.Companies
+            .Include(p => p.Advocates)
+            .FirstOrDefaultAsync(i => i.Id == id);
 
     }
 }

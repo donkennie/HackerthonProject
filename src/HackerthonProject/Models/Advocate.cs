@@ -22,6 +22,6 @@ namespace HackerthonProject.Models
 
         public Company Company { get; set; }
 
-        public List<Links> Links { get; set; } = new List<Links>();
+        public ICollection<Links> Links { get; set; } = new List<Links>();
     }
 }

@@ -4,7 +4,7 @@
 
 namespace HackerthonProject.Migrations
 {
-    public partial class initialCreate : Migration
+    public partial class checkOut : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,8 @@ namespace HackerthonProject.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Logo = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Summary = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Summary = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Href = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -51,7 +52,7 @@ namespace HackerthonProject.Migrations
                 name: "Links",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    LinkId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Youtube = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Twitter = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -60,7 +61,7 @@ namespace HackerthonProject.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Links", x => x.Id);
+                    table.PrimaryKey("PK_Links", x => x.LinkId);
                     table.ForeignKey(
                         name: "FK_Links_Advocates_AdvocateId",
                         column: x => x.AdvocateId,

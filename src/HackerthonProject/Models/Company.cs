@@ -13,6 +13,8 @@ namespace HackerthonProject.Models
 
         public string Summary { get; set; }
 
+        public string Href { get; set; }
+
         public ICollection<Advocate> Advocates { get; set; }
     }
 }
