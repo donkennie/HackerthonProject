@@ -9,10 +9,32 @@ namespace HackerthonProject.Core
 
         public MappingProfiles()
         {
+            #region Advocate Mapping
+            CreateMap< Advocate, AdvocateDTO>()
+                .ForMember(p => p.Profile_pic, i => i.MapFrom<PhotoUrlResolver>())
+                .ForPath(o => o.Company.Href, p => p.MapFrom(i => i.Company.Href))
+                .ForPath(o => o.Company.Name, p => p.MapFrom(i => i.Company.Name))
+                .ForPath(o => o.Company.id, p => p.MapFrom(i => i.Company.Id))
+                .ForPath(o => o.Company.Logo, p => p.MapFrom(i => i.Company.Logo))
+                .ReverseMap();
+            #endregion
 
-            CreateMap<Advocate, AdvocateDTO>().ReverseMap();
+            #region Link Mapping
 
-            CreateMap<Company, CompanyDTO>().ReverseMap();
+            CreateMap<Link, LinkDTO>().ReverseMap();
+            #endregion
+
+
+            #region Company Mapping
+
+            CreateMap<Company, CompanyForAdvocateDTO>().ReverseMap();
+
+            CreateMap<Company, CompanyDTO>()
+                .ForPath(o => o.Advocates, p => p.MapFrom(i => i.Advocates))
+                .ReverseMap();
+
+            #endregion
         }
+
     }
 }

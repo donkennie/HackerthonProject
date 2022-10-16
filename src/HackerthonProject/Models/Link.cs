@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HackerthonProject.Models
 {   
-    public class Links 
+    public class Link 
     {
         [Column("LinkId")]
         public int Id { get; set; }
@@ -13,5 +13,9 @@ namespace HackerthonProject.Models
         public string Twitter { get; set; }
 
         public string Github { get; set; }
+
+        [ForeignKey("AdvocateId")]
+        public int AdvocateId { get; set; }
+
     }
 }

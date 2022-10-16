@@ -4,7 +4,7 @@
 
 namespace HackerthonProject.Migrations
 {
-    public partial class checkOut : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -57,7 +57,7 @@ namespace HackerthonProject.Migrations
                     Youtube = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Twitter = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Github = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AdvocateId = table.Column<int>(type: "int", nullable: true)
+                    AdvocateId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -66,7 +66,8 @@ namespace HackerthonProject.Migrations
                         name: "FK_Links_Advocates_AdvocateId",
                         column: x => x.AdvocateId,
                         principalTable: "Advocates",
-                        principalColumn: "AdvocateId");
+                        principalColumn: "AdvocateId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(

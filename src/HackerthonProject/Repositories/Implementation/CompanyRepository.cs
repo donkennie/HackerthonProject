@@ -15,7 +15,7 @@ namespace HackerthonProject.Repositories.Implementation
 
         public async Task<List<Company>> GetAllCompanies() => 
                   await _applicationDbContext.Companies
-                   .Include(p => p.Advocates)
+                   .Include(p => p.Advocates).ThenInclude(o => o.Links)
                    .ToListAsync();
 
 

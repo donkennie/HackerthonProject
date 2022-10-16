@@ -22,6 +22,18 @@ namespace HackerthonProject.Models
 
         public Company Company { get; set; }
 
-        public ICollection<Links> Links { get; set; } = new List<Links>();
+      /* [ForeignKey(nameof(Links))]
+        public int LinkId { get; set; }*/
+
+        public virtual ICollection<Link> Links { get; set; } = new List<Link>();
+
+       /* public Advocate()
+        {
+           // this.Links = new List<Link>();
+        }*/
+
+        
+
+
     }
 }

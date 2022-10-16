@@ -10,6 +10,7 @@ var connectionString = builder.Configuration.GetConnectionString("DatabaseConnec
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
     opt.UseSqlServer(connectionString);
+    opt.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
 });
 
 builder.Services.AddApplicationServices(builder.Configuration);

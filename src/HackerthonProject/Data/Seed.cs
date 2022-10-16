@@ -58,7 +58,7 @@ namespace HackerthonProject.Data
 
                     var linkData = File.ReadAllText("./Data/SeedData/Link.json");
 
-                    var links = JsonSerializer.Deserialize<List<Links>>(linkData);
+                    var links = JsonSerializer.Deserialize<List<Link>>(linkData);
 
                     foreach (var item in links)
                     {
