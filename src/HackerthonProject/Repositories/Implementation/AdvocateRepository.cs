@@ -9,7 +9,7 @@ namespace HackerthonProject.Repositories.Implementation
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
-        public AdvocateRepository(ApplicationDbContext applicationDbContext) => _applicationDbContext = applicationDbContext;
+        public AdvocateRepository(ApplicationDbContext applicationDbContext) => _applicationDbContext  = applicationDbContext;
 
         public async Task<List<Advocate>> GetAllAdvocates() => await _applicationDbContext.Advocates
             .Include(l => l.Company)

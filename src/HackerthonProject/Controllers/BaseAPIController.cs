@@ -1,4 +1,6 @@
 ﻿using HackerthonProject.Core;
+using HackerthonProject.Extensions;
+using HackerthonProject.RequestFeatures;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -30,6 +32,22 @@ namespace HackerthonProject.Controllers
                 return NotFound();
             }
 
+            return BadRequest(result.Error);
+        }
+
+
+        protected ActionResult HandlePagedResult<T>(ResultResponse<PagedList<T>> result)
+        {
+            if (result == null) return NotFound();
+            if (result.IsSuccess && result.Value != null)
+            {
+                Response.AddPaginationHeader(result.Value.MetaData.CurrentPage, result.Value.MetaData.PageSize,
+                    result.Value.MetaData.TotalCount, result.Value.MetaData.TotalPages);
+
+                return Ok(result.Value);
+            }
+            if (result.IsSuccess && result.Value == null)
+                return NotFound();
             return BadRequest(result.Error);
         }
     }

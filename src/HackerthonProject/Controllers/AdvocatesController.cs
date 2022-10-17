@@ -1,4 +1,7 @@
-﻿using HackerthonProject.Features.Requests.Queries;
+﻿using HackerthonProject.Core;
+using HackerthonProject.DTOs;
+using HackerthonProject.Features.Requests.Queries;
+using HackerthonProject.RequestFeatures;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HackerthonProject.Controllers
@@ -7,12 +10,16 @@ namespace HackerthonProject.Controllers
     {
 
         [HttpGet("GetAllAdvocates")]
-        public async Task<IActionResult> GetAllAdvocates()
+        [ProducesResponseType(typeof(AdvocateDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> GetAllAdvocates([FromQuery] AdvocateParam advocateParam)
         {
-            return HandleResult(await Mediator.Send(new GetAllAdvocatesRequest { }));
+            return HandlePagedResult(await Mediator.Send(new GetAllAdvocatesRequest { AdvocateParam = advocateParam}));
         }
 
         [HttpGet ("GetAdvocateById")]
+        [ProducesResponseType(typeof(AdvocateDTO), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetAdvocateById(int id)
         {
             return HandleResult(await Mediator.Send(new GetAdvocateByIdRequest(id)));
