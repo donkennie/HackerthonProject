@@ -28,15 +28,16 @@ namespace HackerthonProject.Features.Handlers.Queries
         public async Task<ResultResponse<PagedList<AdvocateDTO>>> Handle(GetAllAdvocatesRequest request, CancellationToken cancellationToken)
         {
             //  var query = await _advocateRepository.GetAllAdvocates();
-            var query =  _applicationDbContext.Advocates
-             //  .Where(l => l.Company)
-             .ProjectTo<AdvocateDTO>(_mapper.ConfigurationProvider)
+            var query =  _applicationDbContext.Advocates?
+            //    .Where(i => request.AdvocateParam.SearchTerm == "" || i.Name.Contains(request.AdvocateParam.SearchTerm))
+                .OrderBy(i => i.Id)
+              .ProjectTo<AdvocateDTO>(_mapper.ConfigurationProvider)
                .AsQueryable();
-               //  .ToListAsync();    
-
 
             if (!string.IsNullOrWhiteSpace(request.AdvocateParam.SearchTerm))
-               query = query.Search(request.AdvocateParam.SearchTerm);
+            {
+                query = query.Search(request.AdvocateParam.SearchTerm);
+            }
 
             if (query is null)
             {
