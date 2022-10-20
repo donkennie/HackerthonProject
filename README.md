@@ -19,3 +19,4 @@
 
 > ### Pictoral Explanation
 
+![Screenshot (91)](https://user-images.githubusercontent.com/88739172/197051928-1298bd30-602e-4809-8c2e-c16cf08f2004.png)
