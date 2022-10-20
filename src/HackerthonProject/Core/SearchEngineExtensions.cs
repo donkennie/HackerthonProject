@@ -12,7 +12,7 @@ namespace HackerthonProject.Core
 
             var lowerCaseTerm = searchTerm.Trim().ToLower();
 
-            return advocates.Where(w => w.Company.Name.ToLower().Contains(lowerCaseTerm));
+            return advocates.Where(w => w.Name.ToLower().Contains(lowerCaseTerm));
 
         }
     }

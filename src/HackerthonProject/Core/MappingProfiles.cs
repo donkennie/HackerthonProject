@@ -12,16 +12,12 @@ namespace HackerthonProject.Core
             #region Advocate Mapping
             CreateMap< Advocate, AdvocateDTO>()
                 .ForMember(p => p.Profile_pic, i => i.MapFrom<PhotoUrlResolver>())
-                .ForPath(o => o.Company.Href, p => p.MapFrom(i => i.Company.Href))
-                .ForPath(o => o.Company.Name, p => p.MapFrom(i => i.Company.Name))
-                .ForPath(o => o.Company.id, p => p.MapFrom(i => i.Company.Id))
-                .ForPath(o => o.Company.Logo, p => p.MapFrom(i => i.Company.Logo))
                 .ReverseMap();
             #endregion
 
             #region Link Mapping
 
-            CreateMap<Link, LinkDTO>().ReverseMap();
+           CreateMap<Link, LinkDTO>().ReverseMap();
             #endregion
 
 

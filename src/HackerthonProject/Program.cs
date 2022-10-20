@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
+//var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+/*builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
     var env = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
 
@@ -43,7 +43,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     // or from the environment variable from Heroku, use it to set up your DbContext.
     options.UseNpgsql(connStr);
 });
-
+*/
 
 builder.Services.AddApplicationServices(builder.Configuration);
 builder.Services.AddControllers();
