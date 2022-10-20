@@ -51,5 +51,5 @@
 > - The search feature and pagination
 ![Screenshot (95)](https://user-images.githubusercontent.com/88739172/197054569-dc7823a8-04dd-4f17-a50b-8a2f34c65780.png)
 
->-
+>- Consuming Web API return type through exposing the API capabilities by defining it as a filter that specifies the type of the value and status code returned by the action.
 ![Screenshot (96)](https://user-images.githubusercontent.com/88739172/197054741-983b7ec1-864e-4447-992c-b94e54de7316.png)
