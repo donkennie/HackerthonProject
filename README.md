@@ -5,6 +5,31 @@
 ###  Overview
 > - An API that outputs a list of developer advocates with their details such as where they work, social links, bio, etc.
 
+### API URL
+> - http://donkennie-001-site1.dtempurl.com/
+
+### Get all Advocates URL
+> - http://donkennie-001-site1.dtempurl.com/api/advocates/
+
+### Search for Advocate name query URL
+> - http://donkennie-001-site1.dtempurl.com/api/advocates?searchTerm=kennie
+
+### Paging query URL
+> - http://donkennie-001-site1.dtempurl.com/api/advocates?pageNumber=1&pageSize=5
+
+### Get Advocate by id URL
+> - http://donkennie-001-site1.dtempurl.com/api/advocates/1
+
+###  Get all Companies URL
+> - http://donkennie-001-site1.dtempurl.com/api/companies/
+
+### Get Company by id URL
+> - http://donkennie-001-site1.dtempurl.com/api/companies/1
+
+### paginate and search at the same
+> - http://donkennie-001-site1.dtempurl.com/api/advocates?pageNumber=1&pageSize=5&searchTerm=kennie
+
+
 > ### Features implemented:
 
 > - Using CQRs and MediatR Pattern 
@@ -19,4 +44,12 @@
 
 > ### Pictoral Explanation
 
-![Screenshot (91)](https://user-images.githubusercontent.com/88739172/197051928-1298bd30-602e-4809-8c2e-c16cf08f2004.png)
+> - The four endpoints for the company and advocates
+> 
+![Screenshot (97)](https://user-images.githubusercontent.com/88739172/197054203-cb966778-1db6-4924-8ca2-2d28fe746ed4.png)
+
+> - The search feature and pagination
+![Screenshot (95)](https://user-images.githubusercontent.com/88739172/197054569-dc7823a8-04dd-4f17-a50b-8a2f34c65780.png)
+
+>-
+![Screenshot (96)](https://user-images.githubusercontent.com/88739172/197054741-983b7ec1-864e-4447-992c-b94e54de7316.png)
