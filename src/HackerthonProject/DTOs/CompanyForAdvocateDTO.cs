@@ -11,6 +11,6 @@ namespace HackerthonProject.DTOs
         public string Logo { get; set; }
 
         public string Href { get; set; }
-    }///(int id, string Name, string Logo, string Href);
+    }
 
 }

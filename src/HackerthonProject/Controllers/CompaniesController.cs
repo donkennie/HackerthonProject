@@ -8,7 +8,7 @@ namespace HackerthonProject.Controllers
     public class CompaniesController : BaseAPIController
     {
 
-        [HttpGet("GetCompanyById")]
+        [HttpGet("{id}")]
         [ProducesResponseType(typeof(AdvocateDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetCompanyById(int id)
@@ -16,7 +16,7 @@ namespace HackerthonProject.Controllers
             return HandleResult(await Mediator.Send(new GetCompanyByIdRequest(id)));
         }
 
-        [HttpGet("GetAllCompanies")]
+        [HttpGet]
         [ProducesResponseType(typeof(CompanyDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetAllCompanies()

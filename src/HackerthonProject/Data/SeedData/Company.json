@@ -1,20 +1,20 @@
 [
   {
     "Name": "Agora",
-    "Logo": "agora_logo.png",
+    "Logo": "logos/agora.png",
     "Summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
-    "Href": "/api/Companies/getAllCompanies/1"
+    "Href": "/api/Companies/1"
   },
   {
     "Name": "LearnFlo",
-    "Logo": "agora_logo.png",
+    "Logo": "logos/learnFlo.png",
     "Summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
-    "Href": "/api/Companies/getAllCompanies/2"
+    "Href": "/api/Companies/2"
   },
   {
     "Name": "CareFor",
-    "Logo": "agora_logo.png",
+    "Logo": "logos/careFor.png",
     "Summary": "Duis in est laboris anim pariatur incididunt mollit laboris ea velit aliquip cillum.",
-    "Href": "/api/Companies/getAllCompanies/3"
+    "Href": "/api/Companies/3"
   }
 ]

@@ -10,7 +10,7 @@ namespace HackerthonProject.Core
         public MappingProfiles()
         {
             #region Advocate Mapping
-            CreateMap< Advocate, AdvocateDTO>()
+            CreateMap<Advocate, AdvocateDTO>()
                 .ForMember(p => p.Profile_pic, i => i.MapFrom<PhotoUrlResolver>())
                 .ReverseMap();
             #endregion

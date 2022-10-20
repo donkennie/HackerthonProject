@@ -25,9 +25,5 @@ namespace HackerthonProject.Models
         public virtual ICollection<Link> Links { get; set; } = new List<Link>();
 
 
-
-        
-
-
     }
 }

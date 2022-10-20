@@ -9,7 +9,7 @@ namespace HackerthonProject.Controllers
     public class AdvocatesController : BaseAPIController
     {
 
-        [HttpGet("GetAllAdvocates")]
+        [HttpGet]
         [ProducesResponseType(typeof(AdvocateDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetAllAdvocates([FromQuery] AdvocateParam advocateParam)
@@ -17,7 +17,7 @@ namespace HackerthonProject.Controllers
             return HandlePagedResult(await Mediator.Send(new GetAllAdvocatesRequest { AdvocateParam = advocateParam}));
         }
 
-        [HttpGet ("GetAdvocateById")]
+        [HttpGet ("{id}")]
         [ProducesResponseType(typeof(AdvocateDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> GetAdvocateById(int id)

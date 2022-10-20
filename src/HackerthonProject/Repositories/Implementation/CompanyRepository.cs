@@ -21,7 +21,7 @@ namespace HackerthonProject.Repositories.Implementation
 
         public async Task<Company> GetCompanyById(int id) =>
             await _applicationDbContext.Companies
-            .Include(p => p.Advocates)
+            .Include(p => p.Advocates).ThenInclude(o => o.Links)
             .FirstOrDefaultAsync(i => i.Id == id);
 
     }
